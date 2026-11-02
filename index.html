@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cravora — Discover. Crave. Enjoy.</title>
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("cravora-theme");
+          document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cravora-page">
+    
+
+<!-- NAVBAR START -->
+<nav class="cravora-navbar fixed inset-x-0 top-0 z-50 border-b" aria-label="Main navigation">
+  <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <a href="#home" class="flex items-center" aria-label="Cravora home">
+      <span class="text-2xl font-black tracking-wide">CRAVORA<span class="text-[#C96B36]">.</span></span>
+    </a>
+
+    <div class="order-2 flex items-center gap-2 md:order-3">
+      <button id="theme-toggle" type="button" class="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border transition" aria-label="Switch to dark mode" aria-pressed="false" title="Switch theme">
+        <span id="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
+      <a href="#categories" class="inline-flex items-center justify-center rounded-full bg-[#C96B36] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#A9532D]">Explore Menu</a>
+      <button id="mobile-menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border md:hidden" aria-controls="navbar-sticky" aria-expanded="false" aria-label="Open navigation menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div id="navbar-sticky" class="mobile-nav order-3 hidden w-full md:order-2 md:block md:w-auto">
+      <ul class="flex flex-col gap-1 rounded-2xl p-3 md:flex-row md:items-center md:gap-7 md:p-0">
+        <li><a class="nav-link active" href="#home" aria-current="page">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#categories">Menu</a></li>
+        <li><a class="nav-link" href="#footer">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- HERO SECTION START -->
+<section id="home" aria-labelledby="hero-title" class="relative isolate overflow-hidden bg-[#F5EBDD] px-4 py-16 md:px-8 md:py-24">
+
+  <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+    <!-- LEFT SIDE: TEXT -->
+    <div class="max-w-2xl">
+
+      <p class="font-mono text-xs tracking-widest text-[#A9532D] uppercase">
+        FRESHLY MADE, ALWAYS DELICIOUS
+      </p>
+
+      <h1 id="hero-title" class="mt-4 text-4xl leading-[1.05] font-black tracking-tight text-balance text-[#35251D] sm:text-5xl xl:text-6xl">
+        Good Food.<br>
+        Great Moods.
+      </h1>
+
+      <p class="mt-6 text-lg/7 text-[#70594D]">
+        Discover delicious flavours, freshly prepared meals, and unforgettable bites. Your next favourite meal is just a click away.
+      </p>
+
+      <!-- BUTTONS -->
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+
+        <a href="menu.html" class="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#C96B36] px-6 text-[15px] font-semibold text-white shadow-md transition-all duration-200 hover:bg-[#A9532D]">
+          Explore Menu
+          <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+        </a>
+
+        <a href="about.html" class="inline-flex h-12 items-center justify-center rounded-full border border-[#C96B36] px-6 text-[15px] font-semibold text-[#35251D] transition-colors duration-200 hover:bg-[#EBD9C5]">
+          Our Story
+        </a>
+
+      </div>
+
+      <!-- SMALL HIGHLIGHT -->
+      <div class="mt-8 flex items-center gap-3">
+        <div class="flex -space-x-2">
+          <span class="flex size-9 items-center justify-center rounded-full bg-[#E7B68F] text-xs font-bold text-[#35251D] ring-2 ring-[#F5EBDD]">F</span>
+          <span class="flex size-9 items-center justify-center rounded-full bg-[#D99B75] text-xs font-bold text-[#35251D] ring-2 ring-[#F5EBDD]">T</span>
+          <span class="flex size-9 items-center justify-center rounded-full bg-[#C96B36] text-xs font-bold text-white ring-2 ring-[#F5EBDD]">C</span>
+        </div>
+
+        <p class="text-sm text-[#70594D]">
+          <span class="font-semibold text-[#35251D]">Made with love</span>
+          <br>Every bite, a little moment of joy.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: FOOD IMAGE -->
+    <figure class="relative">
+
+      <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#EBD9C5] shadow-xl">
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000"
+          alt="Freshly prepared gourmet burger"
+          class="size-full object-cover"
+        >
+      </div>
+
+      <!-- FLOATING CARD -->
+      <div class="relative mx-3 -mt-16 rounded-3xl bg-[#FFFCF7] p-4 shadow-2xl ring-1 ring-[#35251D]/10 sm:absolute sm:bottom-5 sm:left-5 sm:mx-0 sm:mt-0 sm:w-72">
+
+        <p class="text-sm font-semibold text-[#35251D]">
+          Today's Craving
+        </p>
+
+        <p class="mt-1 text-xl font-bold text-[#C96B36]">
+          The Classic Burger
+        </p>
+
+        <p class="mt-1 text-sm text-[#70594D]">
+          Juicy, fresh and made to satisfy.
+        </p>
+
+      </div>
+
+    </figure>
+
+  </div>
+</section>
+<!-- HERO SECTION END -->
+
+
+
+<!-- FOOD CATEGORIES SECTION START -->
+
+<section id="categories" aria-labelledby="categories-title" class="bg-[#FFFCF7] px-4 py-16 md:px-8 md:py-24">
+
+  <div class="mx-auto max-w-7xl">
+
+    <!-- SECTION HEADING -->
+    <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+
+      <div>
+        <p class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[#C96B36]">
+          EXPLORE OUR MENU
+        </p>
+
+        <h2 id="categories-title" class="mt-3 text-3xl font-black tracking-tight text-[#35251D] sm:text-4xl">
+          What are you craving?
+        </h2>
+
+        <p class="mt-3 max-w-xl text-base leading-7 text-[#70594D]">
+          From delicious burgers to irresistible desserts, discover something made just for your cravings.
+        </p>
+      </div>
+
+      <a href="menu.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#A9532D] transition-colors hover:text-[#35251D]">
+        View Full Menu
+        <span>→</span>
+      </a>
+
+    </div>
+
+
+    <!-- CATEGORY CARDS GRID -->
+    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+
+      <!-- BURGERS CARD -->
+      <li>
+        <article id="category-burgers" class="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem] p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+          <div class="absolute inset-0 -z-10 overflow-hidden bg-[#EBD9C5]">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"
+              alt="Juicy cheeseburger with fresh lettuce and tomato"
+              class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+          </div>
+
+          <span class="absolute left-5 top-5 rounded-full bg-[#FFFCF7]/95 px-3 py-1.5 text-xs font-semibold text-[#A9532D] shadow-md">
+            CUSTOMER FAVOURITE
+          </span>
+
+          <h3 class="text-2xl font-black tracking-tight text-white">
+            Burgers
+          </h3>
+
+          <p class="mt-1 text-sm text-white/85">
+            Juicy, fresh and full of flavour.
+          </p>
+
+          <a href="menu.html?category=burgers" aria-label="Explore burgers" class="absolute inset-0 rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C96B36]"></a>
+
+        </article>
+      </li>
+
+
+      <!-- PIZZA CARD -->
+      <li>
+        <article id="category-pizza" class="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem] p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+          <div class="absolute inset-0 -z-10 overflow-hidden bg-[#EBD9C5]">
+            <img
+              src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700"
+              alt="Freshly baked pizza topped with cheese and pepperoni"
+              class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+          </div>
+
+          <span class="absolute left-5 top-5 rounded-full bg-[#FFFCF7]/95 px-3 py-1.5 text-xs font-semibold text-[#A9532D] shadow-md">
+            FRESHLY BAKED
+          </span>
+
+          <h3 class="text-2xl font-black tracking-tight text-white">
+            Pizza
+          </h3>
+
+          <p class="mt-1 text-sm text-white/85">
+            Cheesy goodness in every slice.
+          </p>
+
+          <a href="menu.html?category=pizza" aria-label="Explore pizza" class="absolute inset-0 rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C96B36]"></a>
+
+        </article>
+      </li>
+
+
+      <!-- PASTA CARD -->
+      <li>
+        <article id="category-pasta" class="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem] p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+          <div class="absolute inset-0 -z-10 overflow-hidden bg-[#EBD9C5]">
+            <img
+              src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=700"
+              alt="Delicious creamy Italian pasta"
+              class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+          </div>
+
+          <span class="absolute left-5 top-5 rounded-full bg-[#FFFCF7]/95 px-3 py-1.5 text-xs font-semibold text-[#A9532D] shadow-md">
+            RICH & CREAMY
+          </span>
+
+          <h3 class="text-2xl font-black tracking-tight text-white">
+            Pasta
+          </h3>
+
+          <p class="mt-1 text-sm text-white/85">
+            Comfort food at its finest.
+          </p>
+
+          <a href="menu.html?category=pasta" aria-label="Explore pasta" class="absolute inset-0 rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C96B36]"></a>
+
+        </article>
+      </li>
+
+
+      <!-- DESSERTS CARD -->
+      <li>
+        <article id="category-desserts" class="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem] p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+          <div class="absolute inset-0 -z-10 overflow-hidden bg-[#EBD9C5]">
+            <img
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700"
+              alt="Rich chocolate cake with creamy frosting"
+              class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+          </div>
+
+          <span class="absolute left-5 top-5 rounded-full bg-[#FFFCF7]/95 px-3 py-1.5 text-xs font-semibold text-[#A9532D] shadow-md">
+            SWEET TREATS
+          </span>
+
+          <h3 class="text-2xl font-black tracking-tight text-white">
+            Desserts
+          </h3>
+
+          <p class="mt-1 text-sm text-white/85">
+            Save a little room for something sweet.
+          </p>
+
+          <a href="menu.html?category=desserts" aria-label="Explore desserts" class="absolute inset-0 rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C96B36]"></a>
+
+        </article>
+      </li>
+
+
+    </ul>
+
+  </div>
+
+</section>
+
+<!-- FOOD CATEGORIES SECTION END -->
+
+
+
+<!-- CRAVORA BESTSELLERS SECTION START -->
+<section id="bestsellers" aria-labelledby="bestsellers-title" class="bg-[#F5EBDD] px-4 py-16 md:px-8 md:py-24">
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section Heading -->
+    <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="text-xs font-bold tracking-[0.2em] text-[#C96B36]">
+          HANDPICKED FOR YOU
+        </p>
+        <h2 id="bestsellers-title" class="mt-3 text-3xl font-black tracking-tight text-[#35251D] sm:text-4xl">
+          Our Bestsellers
+        </h2>
+        <p class="mt-3 max-w-xl text-base leading-7 text-[#70594D]">
+          The flavours everyone keeps coming back for. Discover your next favourite bite.
+        </p>
+      </div>
+
+      <a href="menu.html" class="inline-flex items-center gap-2 text-sm font-bold text-[#A9532D] transition-colors hover:text-[#35251D]">
+        Explore Full Menu <span>→</span>
+      </a>
+    </div>
+
+    <!-- Food Cards -->
+    <ul class="grid gap-6 lg:grid-cols-2">
+
+      <!-- Classic Smash Burger -->
+      <li>
+        <article class="group relative flex h-full gap-4 rounded-3xl bg-[#FFFCF7] p-3 shadow-md ring-1 ring-[#35251D]/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-5 sm:p-4">
+          <div class="aspect-square w-28 shrink-0 self-start overflow-hidden rounded-2xl bg-[#EBD9C5] sm:w-40">
+            <img src="https://readymadeui.com/images/food2.webp"
+              alt="Classic cheeseburger with fresh lettuce and tomato"
+              loading="lazy"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col py-1">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#C96B36]">CUSTOMER FAVOURITE</p>
+            <h3 class="mt-1 text-lg font-bold text-[#35251D]">Classic Smash Burger</h3>
+            <p class="mt-1 text-sm leading-6 text-[#70594D]">
+              A juicy, crispy-edged burger layered with fresh lettuce, cheese and our signature sauce.
+            </p>
+
+            <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
+              <div>
+                <p class="text-xs text-[#8A7568]">Starting from</p>
+                <p class="text-lg font-black text-[#A9532D]">Rs. 850</p>
+              </div>
+              <a href="menu.html"
+                class="relative z-10 rounded-full bg-[#C96B36] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#A9532D]">
+                Order Now →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-[#8A7568]">◷ 25 min preparation</p>
+          </div>
+        </article>
+      </li>
+
+      <!-- Creamy Alfredo Pasta -->
+      <li>
+        <article class="group relative flex h-full gap-4 rounded-3xl bg-[#FFFCF7] p-3 shadow-md ring-1 ring-[#35251D]/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-5 sm:p-4">
+          <div class="aspect-square w-28 shrink-0 self-start overflow-hidden rounded-2xl bg-[#EBD9C5] sm:w-40">
+            <img src="https://readymadeui.com/images/food7.webp"
+              alt="Fresh pasta served in a bowl"
+              loading="lazy"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col py-1">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#C96B36]">CREAMY DELIGHT</p>
+            <h3 class="mt-1 text-lg font-bold text-[#35251D]">Creamy Alfredo Pasta</h3>
+            <p class="mt-1 text-sm leading-6 text-[#70594D]">
+              Delicious pasta tossed in a rich, creamy sauce with a perfect blend of herbs.
+            </p>
+
+            <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
+              <div>
+                <p class="text-xs text-[#8A7568]">Starting from</p>
+                <p class="text-lg font-black text-[#A9532D]">Rs. 950</p>
+              </div>
+              <a href="menu.html"
+                class="relative z-10 rounded-full bg-[#C96B36] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#A9532D]">
+                Order Now →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-[#8A7568]">◷ 30 min preparation</p>
+          </div>
+        </article>
+      </li>
+
+      <!-- Chilli Chicken -->
+      <li>
+        <article class="group relative flex h-full gap-4 rounded-3xl bg-[#FFFCF7] p-3 shadow-md ring-1 ring-[#35251D]/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-5 sm:p-4">
+          <div class="aspect-square w-28 shrink-0 self-start overflow-hidden rounded-2xl bg-[#EBD9C5] sm:w-40">
+            <img src="https://readymadeui.com/images/food8.webp"
+              alt="Glazed chilli chicken with fresh vegetables"
+              loading="lazy"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col py-1">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#C96B36]">SPICY FAVOURITE</p>
+            <h3 class="mt-1 text-lg font-bold text-[#35251D]">Signature Chilli Chicken</h3>
+            <p class="mt-1 text-sm leading-6 text-[#70594D]">
+              Tender chicken coated in a delicious sweet and spicy glaze with a burst of flavour.
+            </p>
+
+            <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
+              <div>
+                <p class="text-xs text-[#8A7568]">Starting from</p>
+                <p class="text-lg font-black text-[#A9532D]">Rs. 1,050</p>
+              </div>
+              <a href="menu.html"
+                class="relative z-10 rounded-full bg-[#C96B36] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#A9532D]">
+                Order Now →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-[#8A7568]">◷ 35 min preparation</p>
+          </div>
+        </article>
+      </li>
+
+      <!-- Prawn Salad Bowl -->
+      <li>
+        <article class="group relative flex h-full gap-4 rounded-3xl bg-[#FFFCF7] p-3 shadow-md ring-1 ring-[#35251D]/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-5 sm:p-4">
+          <div class="aspect-square w-28 shrink-0 self-start overflow-hidden rounded-2xl bg-[#EBD9C5] sm:w-40">
+            <img src="https://readymadeui.com/images/food44.webp"
+              alt="Fresh salad bowls with prawns, eggs and vegetables"
+              loading="lazy"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col py-1">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#C96B36]">FRESH & DELICIOUS</p>
+            <h3 class="mt-1 text-lg font-bold text-[#35251D]">Prawn Salad Bowl</h3>
+            <p class="mt-1 text-sm leading-6 text-[#70594D]">
+              A refreshing bowl of prawns, fresh vegetables and a zesty lemon dressing.
+            </p>
+
+            <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
+              <div>
+                <p class="text-xs text-[#8A7568]">Starting from</p>
+                <p class="text-lg font-black text-[#A9532D]">Rs. 1,200</p>
+              </div>
+              <a href="menu.html"
+                class="relative z-10 rounded-full bg-[#C96B36] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#A9532D]">
+                Order Now →
+              </a>
+            </div>
+            <p class="mt-3 text-xs text-[#8A7568]">◷ 20 min preparation</p>
+          </div>
+        </article>
+      </li>
+
+    </ul>
+
+   
+  </div>
+</section>
+<!-- CRAVORA BESTSELLERS SECTION END -->
+
+
+
+<!-- CRAVORA SPECIAL OFFER SECTION START -->
+<section id="special-offers" aria-labelledby="offer-title"
+  class="bg-[#FFFCF7] px-4 py-16 md:px-8 md:py-24">
+
+  <div class="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#35251D] px-6 py-16 text-center shadow-xl sm:px-12 md:py-20 lg:px-16">
+
+    <!-- Background Decorations -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-40 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#C96B36]/40 blur-3xl"></div>
+      <div class="absolute -bottom-40 -right-20 h-80 w-80 rounded-full bg-[#A9532D]/30 blur-3xl"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [mask-image:radial-gradient(60%_70%_at_top,black_10%,transparent_100%)] bg-[size:32px_32px] opacity-[0.06]"></div>
+    </div>
+
+    <!-- Offer Badge -->
+    <div class="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[#C96B36]/20 px-4 py-2 text-xs font-bold tracking-widest text-[#F5B88E] ring-1 ring-[#C96B36]/40">
+      <span>✦</span> LIMITED-TIME SPECIAL OFFER
+    </div>
+
+    <!-- Heading -->
+    <h2 id="offer-title"
+      class="mx-auto max-w-3xl text-4xl leading-tight font-black tracking-tight text-balance text-[#FFFCF7] sm:text-5xl md:text-6xl">
+      A Little More Crave,
+      <span class="text-[#E99A67]">A Little Less Spend.</span>
+    </h2>
+
+    <!-- Description -->
+    <p class="mx-auto mt-5 max-w-xl text-base leading-7 text-[#E2D2C7] sm:text-lg">
+      Your favourite flavours just got even better. Enjoy an exclusive discount on your first Cravora order!
+    </p>
+
+    <!-- Discount -->
+    <div class="my-9">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#E2D2C7]">
+        GET
+      </p>
+      <p class="mt-1 text-7xl font-black tracking-tighter text-[#E99A67] sm:text-8xl">
+        20<span class="text-5xl">%</span>
+      </p>
+      <p class="mt-1 text-lg font-bold tracking-widest text-[#FFFCF7]">
+        OFF YOUR FIRST ORDER
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+      <a href="menu.html"
+        class="group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-[#C96B36] px-7 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#E07B42] hover:shadow-xl">
+        Order Now
+        <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+      </a>
+
+      <button type="button"
+        onclick="navigator.clipboard.writeText('CRAVE20').then(() => { this.innerText = 'Copied! ✓'; }).catch(() => { this.innerText = 'Code: CRAVE20'; })"
+        class="inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-sm font-bold text-[#FFFCF7] ring-1 ring-white/30 transition-colors hover:bg-white/10">
+        Use Code: <span class="text-[#E99A67]">CRAVE20</span>
+        <span>⧉</span>
+      </button>
+
+    </div>
+
+    <!-- Offer Details -->
+    <ul class="mt-9 flex flex-wrap justify-center gap-x-7 gap-y-3 text-xs text-[#CDBBB0] sm:text-sm">
+      <li class="flex items-center gap-2">
+        <span class="text-[#E99A67]">✓</span> First order only
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-[#E99A67]">✓</span> Delicious food, better value
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-[#E99A67]">✓</span> Made with love
+      </li>
+    </ul>
+
+  </div>
+</section>
+<!-- CRAVORA SPECIAL OFFER SECTION END -->
+
+
+
+<!-- ABOUT CRAVORA SECTION -->
+<section id="about" class="bg-[#F5EBDD] py-20 px-6 md:px-12 lg:px-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+    <!-- LEFT: FOOD IMAGE -->
+    <div class="relative">
+      <img
+        src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1000"
+        alt="Delicious freshly prepared food"
+        class="w-full h-[420px] md:h-[520px] object-cover rounded-3xl shadow-xl"
+      >
+
+      <!-- FLOATING LABEL -->
+      <div class="absolute bottom-6 left-6 bg-[#FFFCF7] rounded-2xl px-6 py-4 shadow-lg">
+        <p class="text-[#C96B36] text-sm font-semibold tracking-widest uppercase">
+          Made with love
+        </p>
+        <p class="text-[#35251D] text-xl font-bold mt-1">
+          Every single bite.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: ABOUT CONTENT -->
+    <div class="flex flex-col justify-center">
+
+      <p class="text-[#C96B36] font-bold tracking-[0.25em] uppercase text-sm mb-4">
+        Our Story
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-[#35251D] leading-tight mb-6">
+        More Than Food.
+        <span class="text-[#C96B36]">It's an Experience.</span>
+      </h2>
+
+      <p class="text-[#6D5A4F] text-lg leading-8 mb-5">
+        At Cravora, we believe great food brings people together.
+        Every craving deserves something special, delicious, and
+        unforgettable.
+      </p>
+
+      <p class="text-[#6D5A4F] leading-7 mb-8">
+        From comforting classics to exciting new flavours, discover
+        a world of delicious possibilities. Because good food should
+        always make your day a little better.
+      </p>
+
+      <!-- HIGHLIGHTS -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-9">
+
+        <div>
+          <div class="w-10 h-10 rounded-full bg-[#C96B36]/15 flex items-center justify-center mb-3">
+            <span class="text-[#C96B36] text-xl">✦</span>
+          </div>
+          <h3 class="text-[#35251D] font-bold text-sm">Fresh Ingredients</h3>
+          <p class="text-[#8A7669] text-xs mt-1">Quality in every bite</p>
+        </div>
+
+        <div>
+          <div class="w-10 h-10 rounded-full bg-[#C96B36]/15 flex items-center justify-center mb-3">
+            <span class="text-[#C96B36] text-xl">♡</span>
+          </div>
+          <h3 class="text-[#35251D] font-bold text-sm">Made With Love</h3>
+          <p class="text-[#8A7669] text-xs mt-1">A little care in every dish</p>
+        </div>
+
+        <div>
+          <div class="w-10 h-10 rounded-full bg-[#C96B36]/15 flex items-center justify-center mb-3">
+            <span class="text-[#C96B36] text-xl">✧</span>
+          </div>
+          <h3 class="text-[#35251D] font-bold text-sm">Bold Flavours</h3>
+          <p class="text-[#8A7669] text-xs mt-1">Memorable experiences</p>
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <div>
+        <a
+          href="about.html"
+          class="inline-flex items-center gap-3 bg-[#C96B36] hover:bg-[#A9532D] text-white font-semibold px-8 py-4 rounded-full transition duration-300 shadow-md hover:shadow-xl"
+        >
+          Discover Our Story
+          <span class="text-lg">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END ABOUT CRAVORA SECTION -->
+
+
+<!-- CRAVORA TESTIMONIALS SECTION -->
+<section id="testimonials" aria-labelledby="cravora-testimonials"
+  class="bg-[#FFFCF7] px-6 py-20 md:px-12 md:py-28">
+
+  <div class="mx-auto max-w-7xl">
+
+    <!-- SECTION HEADER -->
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#C96B36]">
+          Customer Stories
+        </p>
+
+        <h2 id="cravora-testimonials"
+          class="mt-4 text-4xl font-black leading-tight tracking-tight text-[#35251D] sm:text-5xl">
+          A Taste Worth
+          <span class="text-[#C96B36]">Talking About.</span>
+        </h2>
+
+        <p class="mt-5 max-w-lg text-base leading-7 text-[#806C60]">
+          Great food creates great memories. Here's what our happy
+          customers have to say about their Cravora experience.
+        </p>
+      </div>
+
+      <a href="menu.html"
+        class="group inline-flex items-center gap-2 font-semibold text-[#A9532D] transition hover:text-[#35251D]">
+        Explore Our Menu
+        <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+
+    </div>
+
+    <!-- TESTIMONIAL CARDS -->
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- FEATURED REVIEW -->
+      <figure class="flex flex-col justify-between rounded-[2rem] bg-[#F5EBDD] p-7 sm:col-span-2 sm:p-9 lg:row-span-2">
+
+        <div>
+
+          <div class="flex items-center justify-between">
+            <span class="rounded-full bg-[#C96B36]/10 px-4 py-2 text-xs font-bold tracking-wider text-[#A9532D]">
+              CUSTOMER FAVOURITE
+            </span>
+
+            <span class="text-xl tracking-widest text-[#C96B36]">
+              ★★★★★
+            </span>
+          </div>
+
+          <div class="mt-9 text-5xl text-[#C96B36]">“</div>
+
+          <blockquote class="-mt-2 text-xl font-semibold leading-relaxed tracking-tight text-[#35251D] sm:text-2xl sm:leading-9">
+            The food was absolutely amazing! Everything tasted fresh,
+            the flavours were incredible, and the whole experience
+            felt special. Cravora has definitely become one of my
+            favourite food destinations!
+          </blockquote>
+
+        </div>
+
+        <figcaption class="mt-10 flex flex-col gap-7 border-t border-[#35251D]/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+
+          <div class="flex items-center gap-4">
+            <img
+              src="https://readymadeui.com/team-6.webp"
+              alt="Customer profile"
+              class="h-14 w-14 rounded-full border-2 border-white object-cover shadow-sm"
+            >
+
+            <div>
+              <p class="font-bold text-[#35251D]">Ayesha Khan</p>
+              <p class="mt-1 text-sm text-[#806C60]">Food Lover</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-[#FFFCF7] px-5 py-4">
+            <p class="text-xs font-medium text-[#806C60]">Her favourite</p>
+            <p class="mt-1 font-bold text-[#35251D]">Classic Smash Burger</p>
+          </div>
+
+        </figcaption>
+      </figure>
+
+      <!-- REVIEW TWO -->
+      <figure class="flex flex-col justify-between rounded-[2rem] border border-[#E9DCCB] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+        <div>
+          <div class="text-lg tracking-widest text-[#C96B36]">★★★★★</div>
+
+          <blockquote class="mt-6 text-base leading-7 text-[#59473C]">
+            <p>
+              “That creamy Alfredo pasta was so delicious! The presentation
+              was lovely too. Definitely coming back for another bowl!”
+            </p>
+          </blockquote>
+        </div>
+
+        <figcaption class="mt-8 flex items-center gap-3">
+          <img
+            src="https://readymadeui.com/team-2.webp"
+            alt="Customer profile"
+            class="h-11 w-11 rounded-full object-cover"
+          >
+
+          <div>
+            <p class="text-sm font-bold text-[#35251D]">Omar Ahmed</p>
+            <p class="mt-1 text-xs text-[#806C60]">Pasta Enthusiast</p>
+          </div>
+        </figcaption>
+
+      </figure>
+
+      <!-- REVIEW THREE -->
+      <figure class="flex flex-col justify-between rounded-[2rem] border border-[#E9DCCB] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+        <div>
+          <div class="text-lg tracking-widest text-[#C96B36]">★★★★★</div>
+
+          <blockquote class="mt-6 text-base leading-7 text-[#59473C]">
+            <p>
+              “I loved the variety! There is something for every craving.
+              The desserts were especially delightful. Such a lovely concept!”
+            </p>
+          </blockquote>
+        </div>
+
+        <figcaption class="mt-8 flex items-center gap-3">
+          <img
+            src="https://readymadeui.com/team-3.webp"
+            alt="Customer profile"
+            class="h-11 w-11 rounded-full object-cover"
+          >
+
+          <div>
+            <p class="text-sm font-bold text-[#35251D]">Elena Martin</p>
+            <p class="mt-1 text-xs text-[#806C60]">Dessert Lover</p>
+          </div>
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+    <!-- BOTTOM MESSAGE -->
+    <div class="mt-12 flex flex-col items-center text-center">
+      <div class="flex items-center gap-2 text-[#C96B36]">
+        <span>✦</span>
+        <span class="text-sm font-bold tracking-[0.2em] uppercase">
+          Made for your cravings
+        </span>
+        <span>✦</span>
+      </div>
+
+      <p class="mt-3 text-lg font-semibold text-[#35251D]">
+        Every bite has a story. What's yours?
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- END CRAVORA TESTIMONIALS -->
+
+
+
+<!-- CRAVORA NEWSLETTER SECTION -->
+<section
+  id="newsletter"
+  class="relative overflow-hidden bg-[#35251D] px-6 py-24 md:px-12 md:py-32"
+  style="background-image: url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?w=2000'); background-size: cover; background-position: center;"
+>
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-[#241710]/80"></div>
+
+  <!-- ORANGE GLOW -->
+  <div class="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[#C96B36]/20 blur-[100px]"></div>
+
+  <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
+
+    <!-- LEFT CONTENT -->
+    <div class="max-w-xl">
+
+      <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md">
+        <span class="h-2 w-2 rounded-full bg-[#E99A65]"></span>
+        <p class="text-xs font-bold tracking-[0.25em] text-[#F5C7A6] uppercase">
+          Stay in the loop
+        </p>
+      </div>
+
+      <h2 class="mt-7 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+        A Little Crave
+        <span class="text-[#E99A65]">in Your Inbox.</span>
+      </h2>
+
+      <p class="mt-6 max-w-lg text-base leading-8 text-white/75 sm:text-lg">
+        Get a taste of what's new at Cravora. Discover exciting
+        new arrivals, delicious deals, and special surprises
+        delivered straight to your inbox.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-6 text-sm text-white/70">
+        <span class="flex items-center gap-2">
+          <span class="text-[#E99A65]">✦</span>
+          Exclusive offers
+        </span>
+
+        <span class="flex items-center gap-2">
+          <span class="text-[#E99A65]">✦</span>
+          Fresh updates
+        </span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: SUBSCRIPTION CARD -->
+    <div class="w-full lg:justify-self-end lg:max-w-xl">
+
+      <div class="rounded-[2rem] border border-white/20 bg-white/10 p-7 shadow-2xl backdrop-blur-xl sm:p-10">
+
+        <div class="mb-7">
+          <p class="text-sm font-semibold tracking-widest text-[#E99A65] uppercase">
+            The Cravora Club
+          </p>
+
+          <h3 class="mt-3 text-2xl font-bold text-white sm:text-3xl">
+            Don't miss a single bite.
+          </h3>
+
+          <p class="mt-3 text-sm leading-6 text-white/65">
+            Join our newsletter and stay connected with everything delicious.
+          </p>
+        </div>
+
+        <form id="cravora-newsletter-form">
+
+          <label for="cravora-email" class="mb-2 block text-sm font-medium text-white">
+            Your email address
+          </label>
+
+          <div class="flex flex-col gap-3 sm:flex-row">
+
+            <input
+              id="cravora-email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+              class="min-w-0 flex-1 rounded-full border border-white/20 bg-white/10 px-5 py-4 text-sm text-white outline-none transition placeholder:text-white/45 focus:border-[#E99A65] focus:ring-2 focus:ring-[#C96B36]/30"
+            >
+
+            <button
+              type="submit"
+              class="rounded-full bg-[#C96B36] px-7 py-4 text-sm font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A9532D] hover:shadow-xl"
+            >
+              Subscribe →
+            </button>
+
+          </div>
+
+          <p class="mt-5 text-xs leading-6 text-white/50">
+            By subscribing, you agree to receive Cravora updates.
+            This is a portfolio demo and does not store or send your email.
+          </p>
+
+        </form>
+
+        <!-- DEMO SUCCESS MESSAGE -->
+        <div id="cravora-newsletter-success" class="mt-5 hidden rounded-2xl border border-[#E99A65]/30 bg-[#C96B36]/20 p-5">
+
+          <p class="font-bold text-white">
+            ✦ Thanks for stopping by!
+          </p>
+
+          <p class="mt-2 text-sm leading-6 text-white/75">
+            Your newsletter form is working as a demo. Connect a mailing-list service to enable real subscriptions.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM DECORATION -->
+  <div class="pointer-events-none absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#C96B36] to-transparent"></div>
+
+</section>
+<!-- END CRAVORA NEWSLETTER -->
+
+
+
+<!-- CRAVORA PREMIUM FOOTER -->
+<footer id="footer" class="relative overflow-hidden border-t border-white/10 bg-[#35251D] px-6 pt-16 md:px-12 md:pt-20">
+
+  <!-- DECORATIVE GLOW -->
+  <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#C96B36]/10 blur-[100px]"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl">
+
+    <!-- TOP FOOTER -->
+    <div class="grid gap-14 lg:grid-cols-12 lg:gap-10">
+
+      <!-- BRAND COLUMN -->
+      <div class="lg:col-span-4">
+
+        <a href="#home" class="inline-flex items-center gap-3">
+
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C96B36] text-2xl font-black text-white shadow-lg">
+            C
+          </span>
+
+          <span class="text-3xl font-black tracking-tight text-[#FFFCF7]">
+            Cravora<span class="text-[#E99A65]">.</span>
+          </span>
+
+        </a>
+
+        <p class="mt-6 max-w-sm text-sm leading-7 text-[#D1BFB2]">
+          Discover a world of delicious possibilities. From comforting
+          classics to exciting flavours, every craving deserves
+          something special.
+        </p>
+
+        <p class="mt-6 text-sm font-semibold tracking-wide text-[#E99A65]">
+          Discover. Crave. Enjoy.
+        </p>
+
+        <!-- SOCIAL LINKS -->
+        <div class="mt-8 flex items-center gap-3">
+
+          <a href="#" aria-label="Instagram"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-[#C96B36] hover:bg-[#C96B36]">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7.03.08c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.12 1.39-.67.67-1.08 1.34-1.38 2.13-.3.76-.5 1.64-.55 2.91-.06 1.28-.07 1.69-.06 4.95.01 3.26.02 3.67.08 4.95.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.12.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.55 1.28.06 1.69.07 4.95.06 3.26-.01 3.67-.02 4.95-.08 1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.39.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.55-2.91.06-1.28.07-1.69.06-4.95-.01-3.26-.02-3.67-.08-4.95-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.12-.67-.67-1.34-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.55-1.28-.06-1.69-.07-4.95-.06-3.26.01-3.67.02-4.95.08M7.17 21.78c-1.17-.05-1.81-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.42-2.23-.06-1.26-.07-1.64-.08-4.85-.01-3.2.01-3.58.06-4.85.05-1.17.25-1.81.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42 1.27-.06 1.64-.07 4.85-.08 3.2-.01 3.58.01 4.85.06 1.17.05 1.81.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.64.08 4.85.01 3.2-.01 3.58-.06 4.85-.05 1.17-.25 1.81-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.64.07-4.85.08-3.2.01-3.58-.01-4.85-.06M16.95 5.59a1.44 1.44 0 1 0 2.88 0 1.44 1.44 0 0 0-2.88 0M5.84 12.01a6.17 6.17 0 1 0 12.32-.02 6.17 6.17 0 0 0-12.32.02m2.16 0a4 4 0 1 1 8 0 4 4 0 0 1-8 0"/>
+            </svg>
+          </a>
+
+          <a href="#" aria-label="Facebook"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-[#C96B36] hover:bg-[#C96B36]">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.4 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.2v3.1H10V21z"/>
+            </svg>
+          </a>
+
+          <a href="#" aria-label="YouTube"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-[#C96B36] hover:bg-[#C96B36]">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8M9.5 15.6V8.4l6.3 3.6z"/>
+            </svg>
+          </a>
+
+          <a href="#" aria-label="TikTok"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:border-[#C96B36] hover:bg-[#C96B36]">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19.6 6.3a5.4 5.4 0 0 1-3.3-4.7V1h-4v15.5a3.3 3.3 0 1 1-3.3-3.3c.4 0 .8.1 1.2.2V9.3a7.4 7.4 0 1 0 6.1 7.2V8.6a9.3 9.3 0 0 0 5.4 1.7v-4a5.4 5.4 0 0 1-2.1 0z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- NAVIGATION COLUMNS -->
+      <nav aria-label="Footer navigation" class="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:col-span-8">
+
+        <!-- QUICK LINKS -->
+        <div>
+          <h3 class="text-sm font-bold tracking-widest text-[#E99A65] uppercase">
+            Quick Links
+          </h3>
+
+          <ul class="mt-6 flex flex-col gap-4">
+            <li><a href="#home" class="text-sm text-[#D1BFB2] transition hover:text-white">Home</a></li>
+            <li><a href="#categories" class="text-sm text-[#D1BFB2] transition hover:text-white">Our Menu</a></li>
+            <li><a href="#about" class="text-sm text-[#D1BFB2] transition hover:text-white">About Us</a></li>
+            <li><a href="#newsletter" class="text-sm text-[#D1BFB2] transition hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- EXPLORE -->
+        <div>
+          <h3 class="text-sm font-bold tracking-widest text-[#E99A65] uppercase">
+            Explore
+          </h3>
+
+          <ul class="mt-6 flex flex-col gap-4">
+            <li><a href="#bestsellers" class="text-sm text-[#D1BFB2] transition hover:text-white">Bestsellers</a></li>
+            <li><a href="#category-burgers" class="text-sm text-[#D1BFB2] transition hover:text-white">Burgers</a></li>
+            <li><a href="#category-pizza" class="text-sm text-[#D1BFB2] transition hover:text-white">Pizza & Pasta</a></li>
+            <li><a href="#category-desserts" class="text-sm text-[#D1BFB2] transition hover:text-white">Desserts</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div>
+          <h3 class="text-sm font-bold tracking-widest text-[#E99A65] uppercase">
+            Get in Touch
+          </h3>
+
+          <ul class="mt-6 flex flex-col gap-4">
+            <li><a href="#newsletter" class="text-sm text-[#D1BFB2] transition hover:text-white">Contact Us</a></li>
+            <li><a href="#newsletter" class="text-sm text-[#D1BFB2] transition hover:text-white">Send Feedback</a></li>
+            <li><a href="mailto:hello@cravora.example" class="text-sm text-[#D1BFB2] transition hover:text-white">Email Us</a></li>
+          </ul>
+        </div>
+
+      </nav>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="mt-16 flex flex-col gap-5 border-t border-white/10 py-7 sm:flex-row sm:items-center sm:justify-between">
+
+      <p class="text-xs leading-6 text-[#BBA99D]">
+        © 2026 Cravora. All rights reserved.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-5 text-xs text-[#BBA99D]">
+        <a href="#newsletter" class="transition hover:text-white">Newsletter</a>
+        <a href="#about" class="transition hover:text-white">Our Story</a>
+      </div>
+
+      <a href="#home" class="text-xs font-semibold tracking-wide text-[#E99A65] transition hover:text-white">
+        Back to top ↑
+      </a>
+
+    </div>
+
+  </div>
+</footer>
+<!-- END CRAVORA FOOTER -->
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

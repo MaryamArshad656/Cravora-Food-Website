@@ -1,0 +1,148 @@
+/* CRAVORA — CUSTOM POLISH + THEME SYSTEM */
+:root {
+  color-scheme: light;
+  --page-bg: #FFFCF7;
+  --surface: #FFFCF7;
+  --surface-soft: #F5EBDD;
+  --text-main: #35251D;
+  --text-body: #70594D;
+  --border-soft: #E8D8C5;
+  --accent: #C96B36;
+  --accent-hover: #A9532D;
+  --nav-bg: rgba(245, 235, 221, 0.94);
+  --nav-link: #59473C;
+  --shadow-soft: 0 14px 40px rgba(53, 37, 29, 0.08);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #171311;
+  --surface: #211B17;
+  --surface-soft: #2B211B;
+  --text-main: #F8EEE5;
+  --text-body: #D0BFB2;
+  --border-soft: #49372C;
+  --accent: #E58A54;
+  --accent-hover: #F09A64;
+  --nav-bg: rgba(31, 25, 21, 0.94);
+  --nav-link: #E9DCD2;
+  --shadow-soft: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body.cravora-page {
+  min-width: 320px;
+  margin: 0;
+  padding-top: 72px;
+  background: var(--page-bg);
+  color: var(--text-main);
+  transition: background-color .25s ease, color .25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+section[id], footer[id], article[id] { scroll-margin-top: 88px; }
+img { display: block; max-width: 100%; }
+a, button { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid rgba(201, 107, 54, .55);
+  outline-offset: 3px;
+}
+
+/* Navbar */
+.cravora-navbar {
+  background: var(--nav-bg);
+  border-color: var(--border-soft);
+  color: var(--text-main);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 5px 24px rgba(53, 37, 29, .05);
+}
+.nav-link {
+  display: block;
+  padding: .65rem .8rem;
+  border-radius: 999px;
+  color: var(--nav-link);
+  font-size: .92rem;
+  font-weight: 600;
+  transition: color .2s ease, background-color .2s ease;
+}
+.nav-link:hover, .nav-link.active {
+  color: #C96B36;
+  background: rgba(201, 107, 54, .09);
+}
+.theme-toggle {
+  border-color: var(--border-soft);
+  background: var(--surface);
+  color: var(--text-main);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.mobile-nav ul { background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--shadow-soft); }
+
+/* Site-wide light/dark surfaces. Images and intentionally dark promotional areas stay unchanged. */
+:root[data-theme="dark"] body { background: var(--page-bg); }
+:root[data-theme="dark"] [class*="bg-[#F5EBDD]"],
+:root[data-theme="dark"] [class*="bg-[#FFFCF7]"],
+:root[data-theme="dark"] [class~="bg-white"],
+:root[data-theme="dark"] [class*="bg-[#EBD9C5]"],
+:root[data-theme="dark"] [class*="bg-[#EADCCB]"] {
+  background-color: var(--surface) !important;
+}
+:root[data-theme="dark"] [class*="text-[#35251D]"],
+:root[data-theme="dark"] [class*="text-[#70594D]"],
+:root[data-theme="dark"] [class*="text-[#6D5A4F]"],
+:root[data-theme="dark"] [class*="text-[#806C60]"],
+:root[data-theme="dark"] [class*="text-[#8A7568]"],
+:root[data-theme="dark"] [class*="text-[#8A7669]"],
+:root[data-theme="dark"] [class*="text-[#59473C]"] {
+  color: var(--text-body) !important;
+}
+:root[data-theme="dark"] [class*="text-[#35251D]"] { color: var(--text-main) !important; }
+:root[data-theme="dark"] [class*="border-[#E8D8C5]"],
+:root[data-theme="dark"] [class*="border-[#E9DCCB]"],
+:root[data-theme="dark"] [class*="border-[#35251D]"] {
+  border-color: var(--border-soft) !important;
+}
+:root[data-theme="dark"] [class*="ring-[#35251D]"] { --tw-ring-color: rgba(255,255,255,.10) !important; }
+:root[data-theme="dark"] .cravora-navbar [class*="text-[#35251D]"] { color: var(--text-main) !important; }
+:root[data-theme="dark"] .cravora-navbar [class*="border-[#E8D8C5]"] { border-color: var(--border-soft) !important; }
+
+/* Keep contrast on food photography cards and the newsletter/footer sections. */
+:root[data-theme="dark"] #categories article h3,
+:root[data-theme="dark"] #categories article p { color: #fff !important; }
+:root[data-theme="dark"] #categories article > span {
+  background-color: rgba(255, 252, 247, .96) !important;
+  color: #A9532D !important;
+}
+:root[data-theme="dark"] #newsletter,
+:root[data-theme="dark"] #footer,
+:root[data-theme="dark"] #special-offers > div { color: #fff; }
+:root[data-theme="dark"] #newsletter [class*="bg-white/10"] { background-color: rgba(255,255,255,.10) !important; }
+:root[data-theme="dark"] #newsletter input { color: #fff !important; }
+
+/* General polish */
+section { position: relative; }
+#categories article, #bestsellers article, #testimonials figure { box-shadow: var(--shadow-soft); }
+#bestsellers article, #testimonials figure { transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease; }
+#bestsellers article:hover, #testimonials figure:hover { box-shadow: 0 20px 48px rgba(53,37,29,.13); }
+#newsletter input { width: 100%; }
+#newsletter input::placeholder { opacity: .8; }
+#footer a { text-underline-offset: 4px; }
+#footer a:hover { text-decoration: underline; }
+
+@media (min-width: 768px) {
+  .mobile-nav ul { background: transparent; border: 0; box-shadow: none; }
+}
+@media (max-width: 767px) {
+  body.cravora-page { padding-top: 68px; }
+  .cravora-navbar > div { padding-top: .7rem; padding-bottom: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
